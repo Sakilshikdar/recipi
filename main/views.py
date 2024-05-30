@@ -1,35 +1,35 @@
 from rest_framework import generics
-from .models import Recipe, Ingredient, Rating, Comment
+from .models import Main_Recipe, Recepi_Ingredient, Recepi_Comment, Recepi_Rating
 from .serializers import RecipeIngredientSerializer,RecipeRecipeRatingSerializer,RecipeCommentSerializer,RecipeSerializer
 
 class RecipeListCreateView(generics.ListCreateAPIView):
-    queryset = Recipe.objects.all()
+    queryset = Main_Recipe.objects.all()
     serializer_class = RecipeSerializer
 
 class RecipeDetailView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Recipe.objects.all()
+    queryset = Main_Recipe.objects.all()
     serializer_class = RecipeSerializer
 
 class IngredientListCreateView(generics.ListCreateAPIView):
-    queryset = Ingredient.objects.all()
+    queryset = Recepi_Ingredient.objects.all()
     serializer_class = RecipeIngredientSerializer
 
 class IngredientDetailView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Ingredient.objects.all()
-    serializer_class = IngredientSerializer
+    queryset = Recepi_Ingredient.objects.all()
+    serializer_class = RecipeIngredientSerializer
 
 class RatingListCreateView(generics.ListCreateAPIView):
-    queryset = Rating.objects.all()
+    queryset = Recepi_Rating.objects.all()
     serializer_class = RecipeRecipeRatingSerializer
 
 class RatingDetailView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Rating.objects.all()
+    queryset = Recepi_Rating.objects.all()
     serializer_class = RecipeRecipeRatingSerializer
 
 class CommentListCreateView(generics.ListCreateAPIView):
-    queryset = Comment.objects.all()
+    queryset = Recepi_Comment.objects.all()
     serializer_class = RecipeCommentSerializer
 
 class CommentDetailView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Comment.objects.all()
+    queryset = Recepi_Comment.objects.all()
     serializer_class = RecipeCommentSerializer
